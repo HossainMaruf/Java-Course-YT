@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.*;
 
 public class MainFrame {
     JFrame frame = null;
@@ -13,6 +14,11 @@ public class MainFrame {
         // Adding the design
         button = new JButton("Click Me");
         button.setBounds(0, 20, 80, 40);
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, "Button was clicked!");
+            }
+        });
         frame.add(button);
 
         frame.setVisible(true); // show the frame
